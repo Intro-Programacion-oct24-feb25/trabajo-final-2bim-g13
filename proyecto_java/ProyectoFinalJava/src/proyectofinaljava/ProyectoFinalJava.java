@@ -22,8 +22,39 @@ public class ProyectoFinalJava {
         String cadenaFinal;
         int arreglo [] = new int [6];
         while(bandera){
-            System.out.println("Ingrese el deporte, FUTBOL(1)");
+            System.out.println("Ingrese el deporte, FUTBOL(1), NATACION(2),"
+                    + "ATLETISMO(3), BASQUETBALL(4), CICLISMO(5), TENIS(6),"
+                    + "YOGA(7)");
+            indice = entrada.nextInt();
+            if (indice == 1) {
+                registrarParticipantesFutbol();
+                arreglo[0] = arreglo[0] + 1;
+            } else {
+                if (indice == 2) {
+                    registrarParticipantesNatacion();
+                    arreglo[1] = arreglo[1] + 1;
+                } else {
+                    if (indice == 3) {
+                        registrarParticipantesAtletismo();
+                        arreglo[2] = arreglo[2] + 1;
+                    }else{
+                        if(indice == 4){
+                            registrarParticipantesBasquetball();
+                            arreglo[3] = arreglo[3] + 1;
+                        }else{
+                            if(indice == 5){
+                                registrarParticipantesCiclismo();
+                                arreglo[4] = arreglo[4] + 1;
+                            }else{
+                                if(indice == 6){
+                                    registrarParticipantesYoga();
+                                    arreglo[5] = arreglo[5] + 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
+
     }
-    
-}
