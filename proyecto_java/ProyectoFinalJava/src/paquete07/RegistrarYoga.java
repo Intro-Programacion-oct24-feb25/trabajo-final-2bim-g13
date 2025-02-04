@@ -19,7 +19,7 @@ public class RegistrarYoga {
         String nivel;
         String ciudad;
         String estilo;
-        System.out.println("Ingrese los nombres completos de la persona qur realiza Yoga: ");
+        System.out.println("Ingrese los nombres completos de la persona que realiza Yoga: ");
         nombre = entrada.nextLine();
         System.out.println("Ingrese la edad de la persona que realiza Yoga: ");
         edad = entrada.nextInt();

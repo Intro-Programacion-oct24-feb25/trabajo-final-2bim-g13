@@ -13,15 +13,18 @@ import paquete06.RegistrarTenis;
 import paquete07.RegistrarYoga;
 import paquete08.Informacion;
 import paquete09.Reporte;
+//importamos librerias creadas por nosotros excepto el scanner
 /**
  *
  * @author utpl
  */
 public class ProyectoFinalJava {
+public static String cadenaFinal = "Reporte:\n";
 
     /**
      * @param args the command line arguments
      */
+
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         int indice;
@@ -29,14 +32,14 @@ public class ProyectoFinalJava {
         boolean bandera = true;
         String actividades;
         String reporte = "";
-        String cadenaFinal = "";
-        int arreglo [] = new int [7];
+        int arreglo[] = new int[7];
         int sumaA = 0;
-        
-        String deportes [] = {"Futbol", "Natacion", "Atletismo", "Basquetball", 
-                              "Ciclismo", "Tenis", "Yoga"};
-        
-        while(bandera){
+        //Declaramos variables
+        String deportes[] = {"Futbol", "Natacion", "Atletismo", "Basquetball",
+            "Ciclismo", "Tenis", "Yoga"};
+        //arreglo unidimensional
+        //comenzamos un ciclo while con la condicion de bandera en true
+        while (bandera) {
             System.out.println("Ingrese el deporte, FUTBOL(1), NATACION(2),"
                     + "ATLETISMO(3), BASQUETBALL(4), CICLISMO(5), TENIS(6),"
                     + "YOGA(7)");
@@ -44,6 +47,7 @@ public class ProyectoFinalJava {
             if (indice == 1) {
                 cadenaFinal = String.format("%s%s\n",
                         cadenaFinal, RegistrarFutbol.registrarParticipantesFutbol());
+                //llamamos a la funciones de otras clases dependiendo el indice
                 arreglo[0] = arreglo[0] + 1;
             } else {
                 if (indice == 2) {
@@ -55,29 +59,29 @@ public class ProyectoFinalJava {
                         cadenaFinal = String.format("%s%s\n",
                                 cadenaFinal, RegistrarAtletismo.registrarParticipantesAtletismo());
                         arreglo[2] = arreglo[2] + 1;
-                    }else{
-                        if(indice == 4){
+                    } else {
+                        if (indice == 4) {
                             cadenaFinal = String.format("%s%s\n",
                                     cadenaFinal, RegistrarBasquetball.registrarParticipantesBasquetball());
                             arreglo[3] = arreglo[3] + 1;
-                        }else{
-                            if(indice == 5){
+                        } else {
+                            if (indice == 5) {
                                 cadenaFinal = String.format("%s%s\n",
                                         cadenaFinal, RegistrarCiclismo.registrarParticipantesCiclismo());
                                 arreglo[4] = arreglo[4] + 1;
-                            }else{
-                                if(indice == 6){
+                            } else {
+                                if (indice == 6) {
                                     cadenaFinal = String.format("%s%s\n",
                                             cadenaFinal, RegistrarTenis.registrarParticipantesTenis());
                                     arreglo[5] = arreglo[5] + 1;
-                                }else{
-                                    if(indice == 7){
+                                } else {
+                                    if (indice == 7) {
                                         cadenaFinal = String.format("%s%s\n",
                                                 cadenaFinal, RegistrarYoga.registrarParticipantesYoga());
                                         arreglo[6] = arreglo[6] + 1;
-                                    }else{
+                                    } else {
                                         System.out.println("Lo sentimos,"
-                                            + " el club no tiene esa opción.");
+                                                + " el club no tiene esa opción.");
                                     }
                                 }
                             }
@@ -87,20 +91,19 @@ public class ProyectoFinalJava {
             }
             System.out.println("Si desea salir del ciclo ingrese (0)");
             salida = entrada.nextInt();
-            if(salida == 0){
+            if (salida == 0) {
                 bandera = false;
+                /* Si el numero ingresado es 0 bandera se convierte en falso
+                y se sale del ciclo caso contrario se continua
+                 */
             }
         }
-        for(int i = 0; i < arreglo.length; i++){
+        for (int i = 0; i < arreglo.length; i++) {
             sumaA = sumaA + arreglo[i];
         }
         actividades = Informacion.obtenerInformacion(sumaA);
-        reporte =  Reporte.obtenerReporte(deportes, arreglo);
-        
-        
-        
-        
-        
+        reporte = Reporte.obtenerReporte(deportes, arreglo);
+
         System.out.printf("%s%s%s", cadenaFinal, actividades, reporte);
 
     }

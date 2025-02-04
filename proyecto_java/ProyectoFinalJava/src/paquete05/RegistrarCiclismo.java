@@ -36,7 +36,7 @@ public class RegistrarCiclismo {
                 + "Edad: %d\n"
                 + "Especialidad: %s\n"
                 + "Ciudad: %s\n"
-                + "Record personal: %s\n\n",
+                + "Marca preferida: %s\n\n",
                 cadena,
                 nombre,
                 edad,

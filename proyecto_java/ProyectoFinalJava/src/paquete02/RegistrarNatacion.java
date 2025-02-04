@@ -27,7 +27,7 @@ public class RegistrarNatacion {
         nivel = entrada.nextLine();
         System.out.println("Ingrese la ciudad del Nadador: ");
         ciudad = entrada.nextLine();
-        System.out.println("Ingrese el estilo favorito del Nadaddor: ");
+        System.out.println("Ingrese el estilo favorito del Nadador: ");
         estilo = entrada.nextLine();
 
         cadena = String.format("%sNombres completos: %s\n"

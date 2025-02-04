@@ -12,7 +12,7 @@ public class Informacion {
     public static String obtenerInformacion(int a){
         String mensaje;
         if(a >= 1 && a <= 5){
-            mensaje = "Poca particion en el club hay que mejorar.\n\n";
+            mensaje = "Poca participacion en el club hay que mejorar.\n\n";
         }else{
             if(a >= 6 && a <= 15){
                 mensaje = "Buena participación, sigan así.\n\n";
